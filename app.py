@@ -37,16 +37,17 @@ def load_model():
 
 model = load_model()
 
-# Transform
+# Transform (optimized for MobileNet)
 transform = transforms.Compose([
     transforms.Resize((224, 224)),
-    transforms.ToTensor()
+    transforms.ToTensor(),
+    
 ])
 
 # ---------------- UI ----------------
 option = st.radio(
     "Choose input method:",
-    ("🖼 Upload Image", "📷 Use Camera", )
+    ("🖼 Upload Image", "📷 Use Camera")
 )
 
 image = None
@@ -63,7 +64,7 @@ elif option == "🖼 Upload Image":
 # ---------------- PREDICTION ----------------
 if image is not None:
     img = Image.open(image).convert("RGB")
-    st.image(img, caption="Input Image", use_column_width=True)
+    st.image(img, caption="Input Image", width=300)
 
     x = transform(img).unsqueeze(0).to(DEVICE)
 
@@ -77,6 +78,7 @@ if image is not None:
     st.success(f"**Mudra:** {classes[idx]}")
     st.info(f"**Confidence:** {confidence*100:.2f}%")
 
+# ---------------- MUDRA INFO ----------------
 MUDRA_INFO = {
     "Alapadma": "Fully bloomed lotus; beauty and fullness.",
     "Ardhapataka": "Half flag; leaves, knives, or separation.",
@@ -89,17 +91,14 @@ MUDRA_INFO = {
     "Suchi": "Needle; indication, number one.",
     "Tripataka": "Three-part flag; crown, tree, arrow."
 }
+
 st.markdown("## 🧠 Bharatanatyam Mudras")
 st.markdown("Below are the mudras recognized by **NrityaVaani**.")
 
-cols = st.columns(3)  # 3 cards per row
+cols = st.columns(3)
 
 for i, (mudra, meaning) in enumerate(MUDRA_INFO.items()):
     with cols[i % 3]:
-        st.image(
-            f"assets/mudras/{mudra}.jpg",
-            use_column_width=True
-        )
+        st.image(f"assets/mudras/{mudra}.jpg", width=220)
         st.markdown(f"### {mudra}")
         st.caption(meaning)
-# ----------------------------------------------------------------------------
