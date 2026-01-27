@@ -6,3 +6,4 @@ pillow
 av
 opencv-python-headless
 numpy
+matplotlib
