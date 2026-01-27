@@ -46,7 +46,7 @@ transform = transforms.Compose([
 # ---------------- UI ----------------
 option = st.radio(
     "Choose input method:",
-    ("📷 Use Camera", "🖼 Upload Image")
+    ("🖼 Upload Image", "📷 Use Camera", )
 )
 
 image = None
