@@ -76,3 +76,30 @@ if image is not None:
     st.markdown("### 🔍 Prediction")
     st.success(f"**Mudra:** {classes[idx]}")
     st.info(f"**Confidence:** {confidence*100:.2f}%")
+
+MUDRA_INFO = {
+    "Alapadma": "Fully bloomed lotus; beauty and fullness.",
+    "Ardhapataka": "Half flag; leaves, knives, or separation.",
+    "Chandrakala": "Crescent moon; moon, ornament, tenderness.",
+    "Kartarimukha": "Scissors face; separation, opposition.",
+    "Mayura": "Peacock; purity, bird, delicate actions.",
+    "Pataka": "Flag; cloud, forest, denial.",
+    "Shikhara": "Peak; bow, determination, valor.",
+    "Simhamukha": "Lion face; courage, strength.",
+    "Suchi": "Needle; indication, number one.",
+    "Tripataka": "Three-part flag; crown, tree, arrow."
+}
+st.markdown("## 🧠 Bharatanatyam Mudras")
+st.markdown("Below are the mudras recognized by **NrityaVaani**.")
+
+cols = st.columns(3)  # 3 cards per row
+
+for i, (mudra, meaning) in enumerate(MUDRA_INFO.items()):
+    with cols[i % 3]:
+        st.image(
+            f"assets/mudras/{mudra}.jpg",
+            use_column_width=True
+        )
+        st.markdown(f"### {mudra}")
+        st.caption(meaning)
+# ----------------------------------------------------------------------------
