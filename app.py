@@ -80,17 +80,25 @@ if image is not None:
 
 # ---------------- MUDRA INFO ----------------
 MUDRA_INFO = {
-    "Alapadma": "Fully bloomed lotus; beauty and fullness.",
-    "Ardhapataka": "Half flag; leaves, knives, or separation.",
+    "Alapadma": "Fully bloomed lotus; beauty, purity, fullness.",
+    "Araala": "Bent finger; drinking poison, wind, unsteadiness.",
+    "Ardhachandra": "Half moon; moon, female, spear.",
+    "Ardhapataka": "Half flag; leaves, knives, separation.",
     "Chandrakala": "Crescent moon; moon, ornament, tenderness.",
-    "Kartarimukha": "Scissors face; separation, opposition.",
-    "Mayura": "Peacock; purity, bird, delicate actions.",
-    "Pataka": "Flag; cloud, forest, denial.",
+    "Kartarimukha": "Scissors face; separation, opposition, lightning.",
+    "Mayura": "Peacock; purity, bird, applying kajal.",
+    "Mrigashirsha": "Deer head; woman's cheek, searching, calling.",
+    "Mushti": "Fist; strength, holding, anger.",
+    "Padmakosha": "Lotus bud; fruits, balls, breast.",
+    "Pataka": "Flag; cloud, forest, denial, wind.",
+    "Sarpashirsha": "Serpent head; snake, water offering.",
     "Shikhara": "Peak; bow, determination, valor.",
-    "Simhamukha": "Lion face; courage, strength.",
-    "Suchi": "Needle; indication, number one.",
-    "Tripataka": "Three-part flag; crown, tree, arrow."
+    "Simhamukha": "Lion face; courage, strength, ferocity.",
+    "Suchi": "Needle; indication, number one, pointing.",
+    "Tripataka": "Three-part flag; crown, tree, arrow.",
+    "Trishula": "Trident; trinity, weapon of Shiva."
 }
+
 
 st.markdown("## 🧠 Bharatanatyam Mudras")
 st.markdown("Below are the mudras recognized by **NrityaVaani**.")
